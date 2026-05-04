@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rifa Beneficente - 200 Números</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="container">
+    <section class="card">
+      <h1>🎟️ Rifa Beneficente</h1>
+      <p class="subtitle">Escolha um ou mais números de 001 a 200</p>
+
+      <div class="info">
+        <p><strong>Prêmio:</strong> <span>Informe o prêmio</span></p>
+        <p><strong>Valor:</strong> R$ <span>0,00</span></p>
+        <p><strong>Data do sorteio:</strong> <span>__/__/____</span></p>
+        <p><strong>Organizador:</strong> <span>Seu nome</span></p>
+      </div>
+
+      <h2>Números da rifa</h2>
+      <p class="legenda">
+        <span class="bolinha azul"></span> selecionado
+        <span class="bolinha vermelho"></span> vendido
+      </p>
+
+      <div id="numeros" class="grid"></div>
+
+      <div class="formulario">
+        <h2>Dados do participante</h2>
+        <input type="text" id="nome" placeholder="Nome do participante">
+        <input type="tel" id="telefone" placeholder="Telefone">
+        <textarea id="numerosEscolhidos" placeholder="Números escolhidos" readonly></textarea>
+
+        <button onclick="confirmarParticipacao()">Confirmar participação</button>
+        <button class="whatsapp" onclick="enviarWhatsApp()">Enviar pelo WhatsApp</button>
+        <button class="limpar-selecao" onclick="limparSelecao()">Limpar seleção</button>
+      </div>
+
+      <p id="mensagem"></p>
+    </section>
+
+    <section class="card admin-card">
+      <h2>🔐 Painel do Administrador</h2>
+      <p class="aviso">Senha padrão: <strong>1234</strong>. Altere no arquivo <code>script.js</code>.</p>
+
+      <div id="loginAdmin" class="formulario">
+        <input type="password" id="senhaAdmin" placeholder="Digite a senha do administrador">
+        <button onclick="entrarAdmin()">Entrar no painel</button>
+      </div>
+
+      <div id="painelAdmin" class="painel oculto">
+        <div class="acoes-admin">
+          <button onclick="exportarCSV()">Exportar para Excel/CSV</button>
+          <button class="limpar" onclick="limparRifa()">Limpar todos os vendidos</button>
+          <button class="limpar-selecao" onclick="sairAdmin()">Sair do painel</button>
+        </div>
+
+        <h3>📋 Lista de compradores</h3>
+        <div class="tabela-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Número</th>
+                <th>Nome</th>
+                <th>Telefone</th>
+                <th>Data</th>
+                <th>Ação</th>
+              </tr>
+            </thead>
+            <tbody id="listaCompradores"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
