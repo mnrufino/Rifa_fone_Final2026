@@ -1,4 +1,4 @@
-const SENHA_ADMIN = "1234";
+const SENHA_ADMIN = "9016";
 
 const areaNumeros = document.getElementById("numeros");
 const numerosEscolhidos = document.getElementById("numerosEscolhidos");
